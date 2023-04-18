@@ -11,10 +11,9 @@ spec:
     repoURL: https://github.com/mcastellini/argotest
     targetRevision: HEAD
     path: deploy
-    # kustomize:
-    #   images:
-    #     - name: ghcr.io/stefanprodan/podinfo
-    #       newTag: foo
+    kustomize:
+      images:
+        - ghcr.io/stefanprodan/podinfo:6.2.0
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
