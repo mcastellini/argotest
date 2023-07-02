@@ -16,7 +16,7 @@ spec:
         - ghcr.io/stefanprodan/podinfo:6.2.0
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: podinfo
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
