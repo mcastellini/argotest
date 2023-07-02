@@ -36,3 +36,7 @@ spec:
   owners:
   - name: system:serviceaccount:argocd:argocd-server
     kind: ServiceAccount
+  - name: system:serviceaccount:argocd:argocd-application-controller
+    kind: ServiceAccount
+  - name: system:serviceaccount:argocd:argocd-applicationset-controller
+    kind: ServiceAccount
