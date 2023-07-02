@@ -24,3 +24,8 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  ignoreDifferences:
+    - group: capsule.clastix.io
+      kind: Tenant
+      jqPathExpressions:
+        - ".spec.owners[].clusterRoles[]"
