@@ -24,3 +24,15 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    managedNamespaceMetadata:
+      labels:
+        capsule.clastix.io/tenant: podinfo
+---
+apiVersion: capsule.clastix.io/v1beta2
+kind: Tenant
+metadata:
+  name: podinfo
+spec:
+  owners:
+  - name: system:serviceaccount:argocd:argocd-server
+    kind: ServiceAccount
