@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: other
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/mcastellini/argotest
+    targetRevision: HEAD
+    path: deploy
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: podinfo-other
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
+    automated:
+      prune: true
+      selfHeal: true
